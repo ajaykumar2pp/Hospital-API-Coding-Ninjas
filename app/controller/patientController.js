@@ -83,7 +83,7 @@ function patientController() {
         const reportData = {
           createdByDoctorID: doctor.doctorID,
           doctorName: doctor.Name,
-          patient: patientId,
+          patientID: patientId,
           patientName: patient.name, 
           patientAadharNumber: patient.addharNumber, 
           status,
@@ -114,7 +114,7 @@ function patientController() {
       const patientId = req.params.id;
       try {
         // Find all reports for the specified patient, ordered by date
-        const reports = await Report.find({ patient: patientId }).sort({ date: 1 });
+        const reports = await Report.find({ patientID: patientId }).sort({ date: 1 });
         if (reports.length === 0) {
           // No reports found for the specified patient
           resp.status(404).json({ message: `No reports found for patient with ID: ${patientId}` });

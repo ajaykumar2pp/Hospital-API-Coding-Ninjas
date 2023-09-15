@@ -11,7 +11,7 @@ const reportSchema = new Schema({
     type: String,
     ref: 'Doctor',
   },
-  patient:{
+  patientID:{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Patient',
   },
