@@ -7,12 +7,12 @@ function initRoutes(app) {
 
 
     //  POST  http://localhost:2000/doctors/register
-    app.post('/patient/register', patientController().registerPatient)
+    app.post('/patients/register', patientController().registerPatient)
 
     //  POST  http://localhost:2000/doctors/login
-    app.post('/:id/create_report',authMiddleware, patientController().createPatientReport)
+    app.post('/patients/:id/create_report',authMiddleware, patientController().createPatientReport)
 
     //  POST  http://localhost:2000/:id/all_reports
-    app.get('/:id/all_reports', patientController().getAllReports)
+    app.get('/patients/:id/all_reports', patientController().getAllReports)
 }
 module.exports = initRoutes

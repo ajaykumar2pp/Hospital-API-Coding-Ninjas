@@ -5,20 +5,181 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>Hospital API Project</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/svg+xml" href="/images/hospital-icon.png">
 
-    <title>Hospital API Project</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body style="background-color: rgb(237, 239, 248);">
-   
-    <!--*************************************** Heading ***************************** -->
-    <h1 class="text-center mt-3 text-danger">Hospital API Project </h1>
+<body>
 
-    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark p-3">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="#">Hospital API Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <div class="ms-auto "></div>
+                <ul class="navbar-nav  mb-sm-2 mb-md-0 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-sm-white  bg-sm-primary rounded ms-3 me-4 py-2"
+                            aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-3  me-4 py-2" href="#">Covid-1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-3  me-4 py-2" href="#">Covid-2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-3 me-4 py-2" href="#">Help/Feedback</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner">
+                    <img src="/images/covid.avif" alt="" width="1200px" height="450px">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2 class="text-center text-primary">Vaccination Registration</h2>
+            </div>
+        </div>
+        <!--  ********* section Portal ******** -->
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Register Doctor</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center"> Login Doctor</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center"> Patient Register</h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center mt-5 mb-5">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center"> Patient Create Report</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Patient All Report</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Report Status</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Feature Add  -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2 class="text-center text-primary">Feature</h2>
+            </div>
+        </div>
+
+
+        <!-- ************  Doctor register ********** -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <h5>1. Doctor Register</h5>
+                <button class="btn btn-primary btn-sm">Method POST</button>
+                <span class="ms-5 fst-italic fw-bold"> http://localhost:2000/doctors/register</span>
+            </div>
+        </div>
+        <!-- ************ Doctors Login ********** -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8 ">
+                <h5>2. Doctors Login</h5>
+                <button class="btn btn-primary  btn-sm">Method POST</button>
+                <span class="ms-5 fst-italic fw-bold"> http://localhost:2000/doctors/login </span>
+            </div>
+        </div>
+        <!-- ************ Patients Regsiter ********** -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <h5>3. Patients Regsiter</h5>
+                <button class="btn btn-primary btn-sm">Method POST</button>
+                <span class="ms-5 fst-italic fw-bold"> http://localhost:2000/patients/register</span>
+            </div>
+        </div>
+        <!-- ************  Patients Create Report ********** -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <h5>4. Patients Create Report</h5>
+                <button class="btn btn-primary btn-sm">Method POST</button>
+                <span class="ms-5 fst-italic fw-bold">http://localhost:2000/patients/:id/create_report </span>
+            </div>
+        </div>
+        <!-- ************  Patients All Reports ********** -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <h5>5. Patients All Reports</h5>
+                <button class="btn btn-warning btn-sm">Method GET</button>
+                <span class="ms-5 fst-italic fw-bold bg-light"> http://localhost:2000/patients/:id/all_reports </span>
+            </div>
+        </div>
+        <!--************ Report status ********** -->
+        <div class="row justify-content-center mt-3 mb-5">
+            <div class="col-md-8">
+                <h5>6. Reports Status </h5>
+                <button class="btn btn-warning btn-sm">Method GET</button>
+                <span class="ms-5 fst-italic fw-bold"> http://localhost:2000/reports/:status </span>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="row">
+            <div class="col-md-12">
+             <footer>
+                <h5 class="text-center text-light py-3 bg-dark">Hospital API Project</h5>
+             </footer>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
