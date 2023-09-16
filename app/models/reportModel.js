@@ -29,7 +29,7 @@ const reportSchema = new Schema({
     required: true
   },
   date:{
-    type: Date,
+    type: String,
     default: Date.now
 
   }

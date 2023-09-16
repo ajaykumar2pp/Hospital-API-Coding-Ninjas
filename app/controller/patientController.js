@@ -1,6 +1,8 @@
 require('dotenv').config()
 const Patient = require('../models/patientModel')
 const Report = require('../models/reportModel');
+var moment = require('moment'); 
+moment().format(); 
 
 function patientController() {
   return {
@@ -87,7 +89,7 @@ function patientController() {
           patientName: patient.name, 
           patientAadharNumber: patient.addharNumber, 
           status,
-          date: new Date()
+          date: moment().format('MMMM Do YYYY, h:mm:ss a')
         };
 
         const report = await Report.create(reportData);
@@ -114,7 +116,7 @@ function patientController() {
       const patientId = req.params.id;
       try {
         // Find all reports for the specified patient, ordered by date
-        const reports = await Report.find({ patientID: patientId }).sort({ date: 1 });
+        const reports = await Report.find({ patientID: patientId }).select('-updatedAt -createdAt -__v').sort({ date: 1 });
         if (reports.length === 0) {
           // No reports found for the specified patient
           resp.status(404).json({ message: `No reports found for patient with ID: ${patientId}` });

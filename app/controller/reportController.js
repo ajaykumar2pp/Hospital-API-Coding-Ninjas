@@ -11,7 +11,7 @@ function reportController() {
       try {
         const status = req.params.status;
         // Find all reports with the specified status
-        const reports = await Report.find({ status });
+        const reports = await Report.find({ status }).select('-updatedAt -createdAt -__v');
 
         if (reports.length === 0) {
           resp.status(404).json({ message: `No reports found with status: ${status}` });
